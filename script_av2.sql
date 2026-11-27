@@ -431,3 +431,22 @@ WHERE
   tp.fps_medio < 58
 ORDER BY
   tp.fps_medio ASC;
+
+-- ==========================================
+-- QUESTAO 06
+-- ==========================================
+SELECT 
+  j.nickname,
+  egl.dia_virtual,
+  egl.descricao_evento 
+FROM
+  evento_game_loop egl
+INNER JOIN 
+  partida p ON egl.fk_partida = p.id_partida
+INNER JOIN 
+  jogador j ON p.fk_jogador = j.id_jogador
+WHERE
+  egl.dia_virtual >= 7
+ORDER BY 
+  egl.dia_virtual DESC
+LIMIT 3;
