@@ -399,3 +399,17 @@ WHERE
   p.resultado = 'VITORIA'
 ORDER BY 
   p.dias_sobrevividos DESC;
+
+-- ==========================================
+-- QUESTAO 02
+-- ==========================================
+SELECT 
+  nickname,
+  total_partidas_jogadas,
+  total_vitorias
+FROM 
+  jogador
+ORDER BY
+  total_vitorias DESC 
+LIMIT 4;
+  
