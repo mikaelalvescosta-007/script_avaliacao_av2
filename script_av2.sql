@@ -382,3 +382,20 @@ WHERE
   rb.status = 'ABERTO'
 ORDER BY 
   rb.titulo ASC;
+
+-- ==========================================
+-- QUESTAO 05
+-- ==========================================
+SELECT 
+  p.id_partida,
+  j.nickname,
+  p.dias_sobrevividos,
+  p.tempo_jogado_segundos
+FROM 
+  partida p    
+INNER JOIN 
+  jogador j ON p.fk_jogador = j.id_jogador
+WHERE         
+  p.resultado = 'VITORIA'
+ORDER BY 
+  p.dias_sobrevividos DESC;
