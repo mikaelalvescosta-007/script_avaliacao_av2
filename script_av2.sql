@@ -366,3 +366,19 @@ FROM
 WHERE categoria = 'COMIDA'
 ORDER BY 
   peso_unitario ASC;
+
+-- ==========================================
+-- QUESTAO 04
+-- ==========================================
+SELECT 
+  j.nickname,
+  rb.titulo,
+  rb.status
+FROM 
+  reporte_bug rb 
+INNER JOIN 
+  jogador j ON rb.fk_jogador = j.id_jogador
+WHERE 
+  rb.status = 'ABERTO'
+ORDER BY 
+  rb.titulo ASC;
