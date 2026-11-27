@@ -412,4 +412,22 @@ FROM
 ORDER BY
   total_vitorias DESC 
 LIMIT 4;
-  
+
+-- ==========================================
+-- QUESTAO 07
+-- ==========================================
+SELECT 
+  p.id_partida,
+  j.nickname,
+  tp.fps_medio,
+  tp.itens_coletados_total 
+FROM 
+  telemetria_partida tp
+INNER JOIN 
+  partida p ON tp.fk_partida = p.id_partida
+INNER JOIN 
+  jogador j ON p.fk_jogador = j.id_jogador
+WHERE 
+  tp.fps_medio < 58
+ORDER BY
+  tp.fps_medio ASC;
